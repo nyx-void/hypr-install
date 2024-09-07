@@ -33,9 +33,9 @@ sudo pacman -Scc && sudo pacman -Sy
 mkdir -p ~/.local/share ~/.config ~/.local/bin ~/.local/git-repos
 
 # Post Installation
-git clone --depth=1 https://gitlab.com/amrit-44404/hyprdots.git ~/hyprdots
-git clone --depth=1 https://gitlab.com/amrit-44404/wall.git ~/.local/share/wall
-git clone --depth=1 https://gitlab.com/amrit-44404/dev.git ~/.local/dev
+git clone --depth=1 https://github.com/nyx-void/hyprdots.git ~/hyprdots
+git clone --depth=1 https://github.com/nyx-void/wall.git ~/.local/share/wall
+git clone --depth=1 https://github.com/nyx-void/dev.git ~/.local/dev
 
 # Managing Dotfiles
 cp -r ~/hyprdots/.local/share/* ~/.local/share
