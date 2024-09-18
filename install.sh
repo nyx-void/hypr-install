@@ -11,26 +11,23 @@ if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
 fi
 
 ### Install all of the imp pacakges ####
-read -n1 -rep 'Would you like to install the packages? (y,n)' INST
-if [[ $INST == "Y" || $INST == "y" ]]; then
+# read -n1 -rep 'Would you like to install the packages? (y,n)' INST
+# if [[ $INST == "Y" || $INST == "y" ]]; then
     sudo pacman -Sy --needed base-devel && \
     sudo pacman -S hyprland brightnessctl hyprpaper foot imv lf \
     mpv neovim ttf-hack ttf-hack-nerd waybar bleachbit fastfetch \
     unzip hyprlock newsboat mupdf noto-fonts-emoji wtype wofi \
-    bluez bluez-utils htop grim slurp xf86-video-intel
+    bluez bluez-utils htop grim slurp
+#xf86-video-intel
 
-    # Start the bluetooth service
-    echo -e "Starting the Bluetooth Service...\n"
-    sudo systemctl enable --now bluetooth.service
-    sleep 2
-fi
+# fi
 
 # Remove Bloat
 #sudo pacman -Rncsu vim dolphin nano dunst kitty ly
 sudo pacman -Scc && sudo pacman -Sy
 
 # MKdir
-mkdir -p ~/.local/share ~/.config ~/.local/bin ~/.local/git-repos
+mkdir -p ~/.local/share ~/.config ~/.local/bin ~/.local/git-repos ~/.local/hugo-dir
 
 # Post Installation
 git clone --depth=1 https://github.com/nyx-void/hyprdots.git ~/hyprdots
@@ -47,3 +44,16 @@ cp ~/hyprdots/.inputrc ~/.inputrc
 # Cleaning Home Dir
 mv ~/hypr-install ~/.local/git-repos
 mv ~/hyprdots ~/.local/git-repos
+
+# Start the bluetooth service
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+cat << "EOF"
+########################################
+
+Installation Completed Successfully
+
+########################################
+EOF
+
+#End of script
