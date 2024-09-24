@@ -7,7 +7,7 @@ if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
     echo -e "\n"
     echo -e "Restarting NetworkManager service...\n"
     sudo systemctl restart NetworkManager
-    sleep 3
+    sleep 5
 fi
 
 ### Install all of the imp pacakges ####
@@ -17,7 +17,8 @@ fi
     sudo pacman -S hyprland brightnessctl hyprpaper foot imv lf \
     mpv neovim ttf-hack ttf-hack-nerd waybar bleachbit fastfetch \
     unzip hyprlock newsboat mupdf noto-fonts-emoji wtype wofi \
-    bluez bluez-utils htop grim slurp zed
+    bluez bluez-utils htop grim slurp vulkan-intel zed \
+    xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
 # xf86-video-intel
 
 # fi
@@ -32,7 +33,7 @@ mkdir -p ~/.local/share ~/.config ~/.local/bin ~/.local/git-repos ~/.local/hugo-
 # Post Installation
 git clone --depth=1 https://github.com/nyx-void/hyprdots.git ~/hyprdots
 git clone --depth=1 https://github.com/nyx-void/wall.git ~/.local/share/wall
-git clone --depth=1 https://github.com/nyx-void/dev.git ~/.local/dev
+# git clone --depth=1 https://github.com/nyx-void/dev.git ~/.local/dev
 
 # Managing Dotfiles
 cp -r ~/hyprdots/.local/share/* ~/.local/share
