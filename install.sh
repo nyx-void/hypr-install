@@ -18,13 +18,13 @@ fi
     mpv neovim ttf-hack ttf-hack-nerd waybar bleachbit fastfetch \
     unzip hyprlock newsboat mupdf noto-fonts-emoji wtype wofi \
     bluez bluez-utils htop grim slurp zed
-#xf86-video-intel
+# xf86-video-intel
 
 # fi
 
 # Remove Bloat
-#sudo pacman -Rncsu vim dolphin nano dunst kitty ly
-sudo pacman -Scc && sudo pacman -Sy
+# sudo pacman -Rncsu vim dolphin nano dunst kitty ly
+# sudo pacman -Scc && sudo pacman -Sy
 
 # MKdir
 mkdir -p ~/.local/share ~/.config ~/.local/bin ~/.local/git-repos ~/.local/hugo-dir
@@ -56,4 +56,4 @@ Installation Completed Successfully
 ########################################
 EOF
 
-#End of script
+# End of script
